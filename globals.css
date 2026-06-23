@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+/* masque les scrollbars sur les rails horizontaux */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* perforation de billet réutilisable */
+.ticket-perf { position: relative; height: 0; }
+.ticket-perf::before,
+.ticket-perf::after {
+  content: ""; position: absolute; top: -0.75rem;
+  width: 1.5rem; height: 1.5rem; border-radius: 9999px;
+  background: #EEF1EC;
+}
+.ticket-perf::before { left: -0.75rem; }
+.ticket-perf::after { right: -0.75rem; }
